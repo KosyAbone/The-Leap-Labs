@@ -1,11 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/cryptoCards.css';
+import CryptoDashboard from './components/CryptoDashboard';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Coin Tracker App</h1>
-    </div>
+    <>
+      <CryptoDashboard />
+    </>
   );
 }
 
