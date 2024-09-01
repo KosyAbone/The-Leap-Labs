@@ -1,8 +1,8 @@
 let shoppingCart = {
     items: [],
-    addItem: function(item) {
-        this.items.push(item);
-    },
+    addItem(item) {   //ES6 Refactoring
+        this.items.push(item); 
+    }
 }
 
 function Item(name, price) {
@@ -20,31 +20,36 @@ shoppingCart.addItem(item2);
 shoppingCart.addItem(item3);
 shoppingCart.addItem(item4);
 
-shoppingCart.removeItem = function(index) {
-    this.items.splice(index, 1);
+console.log(shoppingCart.items);
+
+shoppingCart.removeItem = index => { //ES6 Refactoring
+    shoppingCart.items = shoppingCart.items.filter((item, i) => i !== index); //ES6 Refactoring
+    // this.items.splice(index, 1);
 }
 
-shoppingCart.calculateTotal = function() {
+shoppingCart.calculateTotal = () => { //ES6 Refactoring
+    return shoppingCart.items.reduce((acc, item) => acc + item.price, 0); //ES6 Refactoring
+    /**
     let total = 0;
     for (let i = 0; i < this.items.length; i++) {
         total += this.items[i].price;
     }
-    return total;
+    return total;**/
 }
 
-shoppingCart.applyDiscountCode = function(code) {
+shoppingCart.applyDiscountCode = code => { //ES6 Refactoring
     switch(code) {
         case 'SAVE10':
-            return this.calculateTotal() * 0.9; //10% discount
+            return shoppingCart.calculateTotal() * 0.9; //10% discount
         case 'SAVE20':
-            return this.calculateTotal() * 0.8; //20% discount
+            return shoppingCart.calculateTotal() * 0.8; //20% discount
         default:
-            return this.calculateTotal();
+            return shoppingCart.calculateTotal();
     }
 }
 
-shoppingCart.getCurrentItems = function() {
-    return this.items.map(item => item.name);
+shoppingCart.getCurrentItems = () => { //ES6 Refactoring
+    return shoppingCart.items.map(item => item.name);
 }
 
 console.log(shoppingCart.getCurrentItems());
