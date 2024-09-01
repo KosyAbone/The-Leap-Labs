@@ -5,15 +5,17 @@ let shoppingCart = {
     }
 }
 
-function Item(name, price) {
-    this.name = name;
-    this.price = price;
-}   
+class Item {
+    constructor(name, price) {
+        this.name = name;
+        this.price = price;
+    }
+}
 
-let item1 = new Item('Shirt', 20);
+let item1 = new Item('Shirt', 10);
 let item2 = new Item('Pants', 30);
 let item3 = new Item('Shoes', 50);
-let item4 = new Item('Hat', 10);
+let item4 = new Item('Hat', 20);
 
 shoppingCart.addItem(item1);
 shoppingCart.addItem(item2);
@@ -57,6 +59,8 @@ console.log(shoppingCart.getCurrentItems());
 shoppingCart.removeItem(0);
 console.log(shoppingCart.getCurrentItems());
 
-console.log(shoppingCart.calculateTotal());
+console.log('Total = ' + shoppingCart.calculateTotal());
 
-console.log(shoppingCart.applyDiscountCode('SAVE10'));
+console.log('After 10% Discount = ' + shoppingCart.applyDiscountCode('SAVE10'));
+
+console.log('After 20% Discount = ' + shoppingCart.applyDiscountCode('SAVE20'));
