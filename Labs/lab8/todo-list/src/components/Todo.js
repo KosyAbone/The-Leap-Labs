@@ -24,6 +24,8 @@ function Todo() {
                 type="text"
                 placeholder='Add a new task'
                 style={{width: '40%', padding: '10px', margin: '10px'}}
+                value={newTodo}
+                onChange={(e) => setNewTodo(e.target.value)}
             />
             <button
                 style={{
@@ -34,14 +36,17 @@ function Todo() {
                     border: 'none',
                     cursor: 'pointer'
                 }}
+                onClick={addTodos}
             >
                 Add
             </button>
         </div>
         <ul style={{listStyleType: 'circle', paddingLeft: '20px'}}>
-            <li>Task 1</li>
-            <li>Task 2</li>
-            <li>Task 3</li>
+            {todos.map((todo, index) => (
+                <li key={index}>
+                    {todo}
+                    <button onClick={() => removeTodo(index)}>X</button>
+                </li>))}
         </ul>
     </div>
   )
