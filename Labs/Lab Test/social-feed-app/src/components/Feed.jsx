@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Post from './Post'
 
 function Feed() {
@@ -9,6 +9,15 @@ function Feed() {
     { user: "User 3", postMessage: "React is amazing!" },
     { user: "User 4", postMessage: "I love coding!" },
   ];
+
+  useEffect(() => {
+    console.log('Feed component is mounted');
+
+    // Cleanup function to log when component is unmounted
+    return () => {
+      console.log('Feed component is unmounted');
+    };
+  }, []); 
 
   return (
     <div className="feed">
