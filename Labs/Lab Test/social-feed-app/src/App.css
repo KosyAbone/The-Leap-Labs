@@ -1,38 +1,89 @@
-.App {
+
+body {
+  background-color: #3b3d3d; /* Dark background */
+  color: #ffffff; /* Light text color */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+.app {
+  max-width: 600px;
+  margin: 0 auto;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.feed {
+  text-align: center;
+  margin-top: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.feed > h1 {
+  margin-bottom: 80px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.post-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.post-card {
+  max-width: 40%;
+  height: 300px;
+  background-color: #1e1e1e; /* Darker card background */
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  &:hover{
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+}
+
+.likes-count {
+  color: white;
+  margin-left: 10px;
+}
+
+.like-button {
+  background-color: #ff4081; /* Pink color for like button */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.like-button:hover {
+  background-color: #ff79b0; /* Lighter pink on hover */
+}
+
+.comment {
+  margin: 5px 0;
+}
+
+.comment-input {
+  width: 70%;
+  padding: 5px;
+  margin-right: 5px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #2c2c2c;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.submit-button {
+  padding: 5px 10px;
+  background-color: #6200ee; /* Purple color */
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.submit-button:hover {
+  background-color: #7c4dff; /* Lighter purple on hover */
 }
