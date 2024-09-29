@@ -61,3 +61,8 @@ input, select {
         margin: 0.2rem 0;
     }
 }
+
+.navigation-container{
+    display: flex;
+    justify-content: center;
+}
