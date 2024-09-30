@@ -6,6 +6,7 @@ const SearchPanel = ({ searchCallback }) => {
 
     const handleClick = () => {
         alert('Search button clicked')
+        searchCallback(searchText)
     }
 
     const handleSelectChange = (e) => {
@@ -17,15 +18,11 @@ const SearchPanel = ({ searchCallback }) => {
             searchCallback(searchText)
         }
     }
-
-    const handleChange = (e) => {
-        setSearchText(e.target.value)
-    }
-            
+    
     return <>
         <input 
             onKeyDown={handleKeyDown} 
-            onChange={handleChange}
+            onChange={(e) => setSearchText(e.target.value)}
             type="text" 
             placeholder="Search Crypto Currency" 
             value={searchText}
