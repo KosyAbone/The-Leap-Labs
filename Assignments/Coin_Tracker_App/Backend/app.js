@@ -8,7 +8,7 @@ const cors = require('cors');
 app.use(cors());
 
 app.get('/watchlist', async(req, res) => {
-    res.json({"WatchList: ": await watchListModule.getItems()});
+    res.send(await watchListModule.getItems());
 })
 
 app.post('/watchlist', (req, res) => {
@@ -27,6 +27,6 @@ connectDB().then(() => {
     console.log('Connected to MongoDB database...');
 
     app.listen(port, () => {
-        console.log(`Server is running on port ${port}`);
+        console.log(`CORS-Enabled Express server is running on port ${port}`);
     })
 })
