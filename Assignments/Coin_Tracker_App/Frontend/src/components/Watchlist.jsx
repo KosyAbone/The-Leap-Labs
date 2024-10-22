@@ -7,7 +7,6 @@ const Watchlist = () => {
     fetchData();
   }, []);
   const fetchData = async () => {
-    console.log('Fetching data...');
     try{
       const response = await fetch('http://localhost:3000/watchlist');
       if(!response.ok)

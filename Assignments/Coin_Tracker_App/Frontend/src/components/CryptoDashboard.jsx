@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import CryptoCard from "./CryptoCard"
 import SearchPanel from "./SearchPanel"
-// import cryptoCoins from "../helper/cryptoCoins" **Original hardcoded array of coins**
 
 // 1. component mount - useEffect hook
 // 2. fetch data from API - fetch
@@ -30,14 +29,16 @@ const CryptoDashboard = () => {
         }
     }
     
-    // component mounted, fire once ===> empty dependency array
+    // component mounted, fire once ===> empty dependency array, then cleanup
     useEffect(() => {
         console.log('Component mounted...');
         fetchData();
+        return () => {
+            console.log('Component unmounted');
+        };
     }, []);
 
     const fetchData = async () => {
-        console.log('Fetching data...');
         try {
             const response = await fetch(coinMarketAPIUrl, {
                 headers: {
