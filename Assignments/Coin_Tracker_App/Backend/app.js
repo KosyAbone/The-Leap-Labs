@@ -3,7 +3,7 @@ const app = express();
 const connectDB = require('./database/connection');
 const watchListModule = require('./modules/watchListModule');
 const cors = require('cors');
-const port = 3000;
+const port = 4000;
 
 app.use(cors());
 

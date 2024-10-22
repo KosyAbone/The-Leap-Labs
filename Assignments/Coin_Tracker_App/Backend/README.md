@@ -13,6 +13,7 @@ Replace the MongoDB url with yours.
 You can also see the list of symbols on the UI when you run the Crypto Coin Tracker React app and navigate to the /watchlist page.
 
 Open Postman app to test the CRUD functionality
+
 GET /watchlist: To view all the symbols present in the watchlist.
 
 POST /watchlist: To add a new symbol to the watchlist.
